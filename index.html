@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asesmen Akhir Kimia: Atom dan Materi</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2d42;--grape:#6c5ce7;--sun:#ffd23f;--coral:#ff6b6b;--mint:#2ec4b6}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 Nunito,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 10%,#fff3b0 0 90px,transparent 91px),radial-gradient(circle at 92% 18%,#ffd6e7 0 110px,transparent 111px),linear-gradient(160deg,#dff4ff,#ece6ff);background-attachment:fixed}
+h1,h2,.num{font-family:'Baloo 2',system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:16px}
+.card{background:#fff;border-radius:22px;padding:20px;margin:16px 0;box-shadow:0 6px 0 rgba(108,92,231,.18)}
+.hero{text-align:center;background:var(--sun)}
+.hero h1{margin:0;font-size:clamp(26px,6vw,40px);line-height:1.15}
+.hero p{margin:6px 0 0;font-weight:700}
+label.f{display:block;font-weight:700;margin:10px 0 4px}
+input[type=text]{width:100%;padding:12px 14px;font:inherit;border:3px solid #d9d3ff;border-radius:14px}
+input[type=text]:focus{outline:none;border-color:var(--grape)}
+button{font:800 18px 'Baloo 2',sans-serif;color:#fff;background:var(--grape);border:0;border-radius:16px;padding:12px 26px;cursor:pointer;box-shadow:0 5px 0 #4b3fb8;transition:transform .1s}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 #4b3fb8}
+button:disabled{opacity:.5}
+.rules ol{margin:6px 0 0;padding-left:22px}
+.bar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:center;background:#fff;border-radius:0 0 18px 18px;padding:10px 16px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.pill{background:#eee9ff;border-radius:99px;padding:2px 12px;font-weight:700}
+.warn{background:#ffe3e3;border:3px dashed var(--coral);font-weight:700}
+.sec{color:#fff;border-radius:18px;padding:8px 18px;margin:26px 0 8px}
+.sec h2{margin:0;font-size:22px}.sec small{font-weight:700;opacity:.95}
+.q{border-left:10px solid var(--c)}
+.qh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.num{background:var(--c);color:#fff;border-radius:12px;padding:0 14px;font-size:20px}
+.pts{background:#fff3b0;border-radius:99px;padding:0 12px;font-weight:700;font-size:14px}
+.w{background:#f4f7ff;border-radius:14px;padding:10px 14px;margin:0 0 10px}
+table{border-collapse:collapse;margin:8px 0;max-width:100%;display:block;overflow-x:auto}
+th,td{border:2px solid #cfd6ff;padding:4px 12px;text-align:center}th{background:#e3e7ff}
+.o{display:flex;gap:10px;align-items:flex-start;padding:8px 12px;margin:6px 0;border:3px solid #e6e2ff;border-radius:14px;cursor:pointer}
+.o:has(input:checked){background:#e7fff9;border-color:var(--mint)}
+.o input{margin-top:6px;accent-color:var(--grape);transform:scale(1.3)}
+.b{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:8px 0;border-bottom:2px dotted #ddd}
+.b span.t{display:flex;gap:6px}.b .o{margin:0;padding:4px 10px}
+.done{text-align:center;background:#d8fff4;border:4px solid var(--mint)}
+.done h2{font-size:30px;margin:0}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card hero"><h1>🧪 Asesmen Akhir Kimia</h1><p>Teori Atom, Partikel Penyusun, dan Klasifikasi Materi</p></div>
+<div class="card rules"><h2 style="margin:0">📋 Petunjuk Pengerjaan</h2><ol>
+<li>Isi nama dan kelas, lalu tekan <b>Mulai Mengerjakan</b>. Satu siswa hanya dapat mengirim jawaban satu kali.</li>
+<li>Soal terdiri atas 30 butir dengan skor maksimum 44. Skor tiap soal tertera di pojok kanan kartu soal.</li>
+<li><b>Pilihan ganda</b> (skor 1): pilih satu jawaban dari lima opsi.</li>
+<li><b>Pilihan ganda kompleks</b> (skor 2): pilih tepat sejumlah jawaban yang diminta. Setiap jawaban yang benar mendapat poin.</li>
+<li><b>Benar/salah</b> (skor 2): tentukan setiap pernyataan Benar atau Salah. Setiap pernyataan yang tepat mendapat poin.</li>
+<li>Jangan berpindah tab atau meninggalkan halaman ini. Setiap kali keluar akan tercatat dan dilaporkan kepada guru.</li>
+<li>Periksa kembali jawabanmu, lalu tekan <b>Kirim Jawaban</b> di bagian paling bawah.</li></ol></div>
+<div id="login" class="card"><h2 style="margin:0">👋 Halo! Siapa namamu?</h2>
+<label class="f" for="nm">Nama lengkap</label><input type="text" id="nm" autocomplete="off">
+<label class="f" for="kl">Kelas</label><input type="text" id="kl" placeholder="contoh: XII-1" autocomplete="off">
+<p id="err" style="color:#d62828;font-weight:700"></p><button id="go">Mulai Mengerjakan</button></div>
+</div>
+<div id="exam" class="hide">
+<div class="bar"><b id="who"></b><span class="pill" id="prog"></span><span class="pill" id="vio"></span></div>
+<div class="wrap"><div id="warn" class="card warn hide"></div><div id="soal"></div>
+<div class="card" id="end" style="text-align:center"><p>Sudah yakin dengan semua jawabanmu?</p><button id="send">Kirim Jawaban 🚀</button><p id="msg" style="font-weight:700"></p></div>
+<div class="card done hide" id="ok"><h2>✅ Jawabanmu sudah terkirim!</h2><p>Terima kasih, <b id="okn"></b>. Datamu sudah diterima guru. Kamu boleh menutup halaman ini.</p></div></div></div>
+<script>
+const URL_APPS='https://script.google.com/macros/s/AKfycbz-eieacb922uMuxyXcsjys0pEOHRbjUw_LW_OJ4fuayFjo84phVYIevDoRyC3hj-4O/exec';
+const tb=(h,r)=>'<table><tr>'+h.map(x=>'<th>'+x+'</th>').join('')+'</tr>'+r.map(a=>'<tr>'+a.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</table>';
+const SEC=[['Sub TP 1','Model atom','#ff6b8b'],['Sub TP 2','Partikel dasar atom','#f08a00'],['Sub TP 3','Isotop, isobar, isoton','#12a89d'],['Sub TP 4','Konfigurasi elektron dan SPU','#6c5ce7'],['Sub TP 5','Sifat fisik dan sifat kimia','#1c8fd1'],['Sub TP 6','Klasifikasi materi','#5a9e12']];
+const TA=tb(['Atom','Nomor atom','Nomor massa'],[['P',6,12],['Q',6,14],['R',7,14],['S',8,16]]);
+const TP=tb(['Spesies','Proton','Neutron','Elektron'],[['(1)',11,12,10],['(2)',9,10,10],['(3)',12,12,12],['(4)',16,16,18],['(5)',13,14,10]]);
+const Q=[
+['g',0,'Pada tahun 1897, J.J. Thomson melakukan percobaan tabung sinar katode. Sinar katode dibelokkan menuju kutub positif medan listrik, sehingga disimpulkan sinar tersebut tersusun atas partikel bermuatan negatif (elektron) yang berasal dari dalam atom.','Penemuan Thomson tersebut membuktikan kelemahan model atom Dalton, yaitu pernyataan bahwa ...',['atom-atom suatu unsur memiliki sifat yang sama','atom berupa bola pejal yang tidak dapat dibagi lagi','atom-atom unsur yang berbeda memiliki massa berbeda','senyawa terbentuk dari atom-atom dengan perbandingan tetap','reaksi kimia adalah penataan ulang atom-atom']],
+['g',0,'Pada percobaan hamburan sinar alfa terhadap lempeng emas tipis, dari sekitar 10.000 partikel alfa yang ditembakkan: hampir semuanya diteruskan lurus, sebagian kecil dibelokkan dengan sudut tertentu, dan sekitar 1 partikel dipantulkan kembali.','Kesimpulan yang tepat berdasarkan data percobaan tersebut adalah ...',['atom berupa bola pejal bermuatan positif yang homogen','elektron tersebar merata di dalam bola bermuatan positif','elektron mengelilingi inti pada lintasan dengan energi tertentu','atom memiliki inti kecil bermuatan positif sebagai pusat massa, dan sebagian besar volume atom berupa ruang kosong','elektron berada dalam orbital dengan kebolehjadian tertentu']],
+['g',0,'Menurut Rutherford, elektron mengelilingi inti atom seperti planet mengelilingi matahari. Menurut fisika klasik, partikel bermuatan yang bergerak melingkar akan terus memancarkan energi.','Berdasarkan informasi tersebut, kelemahan model atom Rutherford adalah ...',['elektron akan kehilangan energi dan jatuh ke inti sehingga atom tidak stabil','atom dianggap tidak memiliki inti','elektron dianggap tersebar merata pada bola positif','elektron dianggap tidak bermuatan','inti atom dianggap tidak bermuatan positif']],
+['g',0,'Model atom Bohr berhasil menjelaskan spektrum garis atom hidrogen, tetapi hanya cocok untuk atom berelektron tunggal. Model ini juga bertentangan dengan prinsip ketidakpastian Heisenberg karena menganggap posisi dan kecepatan elektron dapat diketahui sekaligus.','Model atom mekanika kuantum menyempurnakan model Bohr dengan menyatakan bahwa ...',['elektron bergerak pada lintasan melingkar dengan energi tertentu','elektron tersebar di dalam bola bermuatan positif','atom adalah partikel terkecil yang tidak dapat dibagi','inti atom bermuatan positif dan massanya terpusat','elektron ditemukan dalam orbital, yaitu daerah dengan kebolehjadian terbesar menemukan elektron, dan posisinya tidak dapat ditentukan secara pasti']],
+['b',0,'','Pada percobaan Rutherford, sebagian besar partikel alfa menembus lempeng emas, sebagian kecil dibelokkan, dan sangat sedikit dipantulkan.',['Partikel alfa yang menembus lempeng menunjukkan sebagian besar atom berupa ruang kosong','Pembelokan partikel alfa terjadi karena inti atom bermuatan positif','Model atom Rutherford dapat menjelaskan spektrum garis atom hidrogen']],
+['b',0,'','Perhatikan perkembangan model atom dari Dalton hingga mekanika kuantum.',['Model Thomson memperbaiki model Dalton karena menyatakan atom mengandung partikel bermuatan (elektron)','Model Bohr mengatasi masalah kestabilan atom pada model Rutherford dengan konsep lintasan stasioner','Model mekanika kuantum menyatakan posisi elektron dapat ditentukan secara pasti pada lintasan tertentu','Model Bohr berlaku baik untuk semua atom berelektron banyak']],
+['g',1,'','Natrium dalam garam dapur memiliki notasi ²³₁₁Na. Jumlah proton, elektron, dan neutron atom natrium tersebut secara berturut-turut adalah ...',['11, 23, 11','12, 11, 12','11, 12, 23','11, 11, 12','23, 11, 11']],
+['g',1,'Atom nitrogen dengan notasi ¹⁴₇N menerima 3 elektron sehingga membentuk ion nitrida (N³⁻).','Jumlah proton, neutron, dan elektron ion N³⁻ secara berturut-turut adalah ...',['7, 7, 4','7, 14, 10','10, 7, 7','7, 7, 10','7, 7, 7']],
+['g',1,'Hasil analisis partikel penyusun suatu spesies Q:'+tb(['Spesies','Proton','Neutron','Elektron'],[['Q',26,30,24]]),'Notasi spesies Q yang tepat adalah ...',['⁵⁶₂₄Fe²⁺','⁵⁶₂₆Fe²⁻','⁵⁶₂₆Fe²⁺','⁵⁰₂₆Fe²⁺','⁵⁶₂₆Fe']],
+['g',1,'','Suatu atom Y memiliki jumlah seluruh partikel dasar penyusunnya (proton, elektron, neutron) sebanyak 40. Jumlah partikel bermuatan pada atom tersebut 12 lebih banyak daripada partikel tidak bermuatan. Nomor massa atom Y adalah ...',['27','26','28','40','13']],
+['k',1,TP,'Pilihlah <b>dua</b> spesies yang merupakan ion positif (kation)!',['Spesies (1)','Spesies (2)','Spesies (3)','Spesies (4)','Spesies (5)'],2],
+['b',1,'','Ion aluminium memiliki notasi ²⁷₁₃Al³⁺.',['Jumlah proton ion tersebut adalah 13','Jumlah elektron ion tersebut adalah 16','Jumlah neutron ion tersebut adalah 14']],
+['g',2,TA,'Pasangan atom yang merupakan isotop adalah ...',['Q dan R','Q dan S','P dan R','R dan S','P dan Q']],
+['g',2,TA,'Pasangan atom yang merupakan isobar dan isoton berturut-turut adalah ...',['P–Q dan Q–R','Q–R dan Q–S','Q–S dan Q–R','R–S dan P–Q','P–R dan R–S']],
+['g',2,'','Diketahui atom-atom: ⁴⁰₁₈Ar, ³⁹₁₉K, ⁴⁰₂₀Ca, ⁴¹₂₀Ca, ³⁸₁₈Ar, dan ⁴¹₁₉K. Atom yang merupakan isobar dari ⁴⁰₁₈Ar sekaligus isoton dari ³⁹₁₉K adalah ...',['³⁹₁₉K','⁴¹₂₀Ca','⁴⁰₂₀Ca','³⁸₁₈Ar','⁴¹₁₉K']],
+['k',2,'Atom-atom: ¹⁶₈O, ¹⁷₈O, ¹⁴₆C, ¹³₆C, dan ¹⁴₇N.','Pilihlah <b>tiga</b> pernyataan yang benar!',['¹⁶₈O dan ¹⁷₈O merupakan isotop','¹⁴₆C dan ¹⁴₇N merupakan isobar','¹³₆C dan ¹⁴₇N merupakan isoton','¹⁴₆C dan ¹³₆C merupakan isobar','¹⁷₈O dan ¹⁴₇N merupakan isoton'],3],
+['b',2,tb(['Atom','Proton','Neutron'],[['K',17,18],['L',17,20],['M',18,22],['N',20,20]]),'Tentukan kebenaran pernyataan berikut!',['K dan L merupakan isotop','M dan N merupakan isobar','K dan M merupakan isoton','L dan N merupakan isobar']],
+['g',3,'','Fosfor (nomor atom 15) digunakan pada kepala korek api. Berdasarkan konfigurasi elektron model atom Bohr, fosfor terletak pada ...',['golongan IIIA, periode 5','golongan VA, periode 2','golongan IIIA, periode 3','golongan VIA, periode 3','golongan VA, periode 3']],
+['g',3,'','Magnesium (nomor atom 12) dan kalsium (nomor atom 20) terletak pada golongan yang sama dalam SPU. Hal ini disebabkan keduanya memiliki ...',['jumlah kulit yang sama','nomor massa yang sama','jumlah neutron yang sama','jumlah elektron valensi yang sama','jumlah proton yang sama']],
+['g',3,'','Ion X²⁻ memiliki 18 elektron dan 16 neutron. Letak unsur X dalam SPU adalah ...',['golongan VIA, periode 3','golongan VIIIA, periode 3','golongan IIA, periode 4','golongan VIA, periode 4','golongan IIA, periode 3']],
+['g',3,'','Unsur X terletak pada periode 4 dan golongan IIIA. Nomor atom unsur X adalah ...',['13','31','21','33','49']],
+['k',3,'Konfigurasi elektron lima unsur hipotetis (model atom Bohr):'+tb(['Unsur','Konfigurasi elektron'],[['P','2, 8, 1'],['Q','2, 8, 8, 2'],['R','2, 8, 7'],['S','2, 8, 8'],['T','2, 1']]),'Pilihlah <b>tiga</b> pernyataan yang benar!',['P dan T terletak pada golongan yang sama','Q terletak pada golongan IIA, periode 4','R cenderung melepas 1 elektron','S terletak pada golongan VIIA, periode 3','P dan R terletak pada periode yang sama'],3],
+['b',3,'','Diketahui unsur X (nomor atom 16), unsur Y (konfigurasi elektron 2, 8, 8, 1), dan unsur Z (nomor atom 10).',['X terletak pada golongan VIA, periode 3','Y terletak pada golongan IA, periode 4','Z terletak pada golongan VIIA, periode 2']],
+['k',4,'','Perhatikan fenomena sehari-hari berikut. Pilihlah <b>dua</b> fenomena yang menunjukkan <b>sifat kimia</b>!',['Es batu mencair','Paku besi berkarat','Gula larut dalam air','Kayu terbakar menjadi abu','Minyak goreng mengapung di atas air'],2],
+['k',4,'Aluminium banyak dipakai sebagai kemasan dan peralatan dapur.','Pilihlah <b>tiga</b> pernyataan yang merupakan <b>sifat fisik</b> aluminium!',['Bereaksi dengan asam klorida menghasilkan gas hidrogen','Berwarna putih keperakan','Mengilap dan dapat ditempa menjadi lembaran tipis','Teroksidasi di udara membentuk lapisan Al₂O₃','Titik lelehnya 660 °C'],3],
+['k',4,'Seorang siswa mengamati lilin. (i) Lilin dipanaskan perlahan: lilin meleleh menjadi cairan bening dan memadat kembali saat didinginkan. (ii) Sumbu lilin dinyalakan: lilin terbakar, terbentuk gas karbon dioksida, uap air, dan jelaga.','Pilihlah <b>tiga</b> pernyataan yang benar!',['Melelehnya lilin termasuk perubahan fisik','Terbakarnya lilin menunjukkan sifat kimia lilin, yaitu dapat terbakar','Memadatnya kembali lilin menghasilkan zat baru','Terbentuknya karbon dioksida dan uap air menandakan terjadinya perubahan kimia','Titik leleh lilin merupakan sifat kimia'],3],
+['g',5,'Enam zat yang sering dijumpai: besi murni, air, udara, garam dapur, emas murni, dan sirup.','Pengelompokan zat tersebut yang tepat adalah ...',['Unsur: air, emas; senyawa: besi, garam dapur; campuran: udara, sirup','Unsur: besi, air; senyawa: emas, garam dapur; campuran: udara, sirup','Unsur: besi, emas; senyawa: air, garam dapur; campuran: udara, sirup','Unsur: besi, udara; senyawa: air, sirup; campuran: emas, garam dapur','Unsur: emas, garam dapur; senyawa: besi, air; campuran: udara, sirup']],
+['k',5,'Zat-zat berikut ditemukan di sekitar kita: air laut, karbon dioksida, belerang, perunggu, dan alkohol 70% (etanol dan air).','Pilihlah <b>tiga</b> pernyataan yang benar!',['Air laut tergolong senyawa','Karbon dioksida tergolong senyawa','Belerang tergolong senyawa','Perunggu tergolong campuran logam','Alkohol 70% tergolong campuran'],3],
+['k',5,tb(['Zat','Hasil pengamatan'],[['X','Dipanaskan terurai menjadi merkuri (logam cair) dan gas oksigen'],['Y','Larutan garam: air dan garam dapat dipisahkan dengan penguapan, dan masing-masing mempertahankan sifat aslinya'],['Z','Tidak dapat diuraikan menjadi zat lain dengan cara kimia; hanya terdiri atas satu jenis atom']]),'Pilihlah <b>tiga</b> pernyataan yang benar!',['X tergolong senyawa','Y tergolong senyawa','Z tergolong unsur','Komponen penyusun Y hanya dapat dipisahkan dengan reaksi kimia','Komponen penyusun Y mempertahankan sifat aslinya'],3],
+['b',5,'','Di dapur terdapat larutan garam dapur, air, dan paku besi yang berkarat.',['Larutan garam dapur dalam air merupakan campuran homogen','Air (H₂O) tergolong unsur karena hanya tersusun atas hidrogen dan oksigen','Berkaratnya besi merupakan contoh sifat fisik besi']]
+];
+const PTS={g:1,k:2,b:2},$=id=>document.getElementById(id),KEY='asesmen_atom_v1';
+let S=JSON.parse(localStorage.getItem(KEY)||'null')||{nama:'',kelas:'',ans:{},vio:0,sent:false},last=0;
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const post=p=>fetch(URL_APPS,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({...p,nama:S.nama,kelas:S.kelas,vio:S.vio})});
+function render(){let h='',cur=-1;Q.forEach((q,i)=>{const n=i+1,[t,s,w,tx,o]=q,c=SEC[s][2];
+if(s!=cur){cur=s;const a=Q.findIndex(x=>x[1]==s)+1,z=Q.map(x=>x[1]).lastIndexOf(s)+1;h+=`<div class="sec" style="background:${c}"><h2>${SEC[s][0]}: ${SEC[s][1]}</h2><small>Soal ${a}–${z}</small></div>`}
+h+=`<div class="card q" style="--c:${c}"><div class="qh"><span class="num">Soal ${n}</span><span class="pts">Skor maks ${PTS[t]}</span></div>${w?`<div class="w">${w}</div>`:''}<p>${tx}</p>`;
+if(t=='g')o.forEach((x,j)=>h+=`<label class="o"><input type="radio" name="q${n}" data-q="${n}" value="${'ABCDE'[j]}"><span><b>${'ABCDE'[j]}.</b> ${x}</span></label>`);
+if(t=='k')o.forEach((x,j)=>h+=`<label class="o"><input type="checkbox" data-q="${n}" value="${j+1}"><span><b>(${j+1})</b> ${x}</span></label>`);
+if(t=='b')o.forEach((x,j)=>h+=`<div class="b"><span>(${'abcd'[j]}) ${x}</span><span class="t"><label class="o"><input type="radio" name="q${n}_${j}" data-q="${n}" data-j="${j}" value="B">Benar</label><label class="o"><input type="radio" name="q${n}_${j}" data-q="${n}" data-j="${j}" value="S">Salah</label></span></div>`);
+h+='</div>'});$('soal').innerHTML=h;
+for(const n in S.ans){const a=S.ans[n],t=Q[n-1][0],f=(x,y)=>{const e=$('soal').querySelector(`input[data-q="${n}"]${x}`);if(e&&y)e.checked=true};
+if(t=='g')f(`[value="${a}"]`,1);else if(t=='k')a.forEach(v=>f(`[value="${v}"]`,1));else a.forEach((v,j)=>v!='-'&&f(`[data-j="${j}"][value="${v}"]`,1))}}
+function upd(){let d=0;Q.forEach((q,i)=>{const a=S.ans[i+1];if(q[0]=='g'?a:q[0]=='k'?a&&a.length==q[5]:a&&!a.includes('-'))d++});
+$('prog').textContent=`Terjawab ${d} dari ${Q.length}`;$('vio').textContent=`Keluar halaman: ${S.vio}×`;
+$('warn').classList.toggle('hide',!S.vio);$('warn').textContent=`⚠️ Kamu sudah keluar dari halaman ini ${S.vio} kali. Kejadian ini dilaporkan kepada guru.`;return d}
+function vio(){if(!S.nama||S.sent||Date.now()-last<1500)return;last=Date.now();S.vio++;save();upd();post({a:'log'}).catch(()=>{})}
+document.addEventListener('visibilitychange',()=>document.hidden&&vio());window.addEventListener('blur',vio);
+$('soal').addEventListener('change',e=>{const i=e.target,n=+i.dataset.q,q=Q[n-1];
+if(q[0]=='g')S.ans[n]=i.value;
+else if(q[0]=='k'){const c=[...$('soal').querySelectorAll(`input[data-q="${n}"]:checked`)];if(c.length>q[5]){i.checked=false;alert('Pilih tepat '+q[5]+' jawaban.');return}S.ans[n]=c.map(x=>+x.value)}
+else{const a=S.ans[n]||q[4].map(()=>'-');a[i.dataset.j]=i.value;S.ans[n]=a}save();upd()});
+function show(){$('login').classList.add('hide');$('exam').classList.remove('hide');$('who').textContent=`${S.nama} · Kelas ${S.kelas}`;render();upd();if(S.sent)done()}
+function done(){$('end').classList.add('hide');$('ok').classList.remove('hide');$('okn').textContent=S.nama;$('soal').querySelectorAll('input').forEach(x=>x.disabled=true)}
+$('go').onclick=()=>{const n=$('nm').value.trim(),k=$('kl').value.trim();if(!n||!k){$('err').textContent='Nama dan kelas wajib diisi.';return}
+S={nama:n,kelas:k,ans:{},vio:0,sent:false};save();post({a:'start'}).catch(()=>{});show()};
+$('send').onclick=async()=>{const d=upd();if(d<Q.length&&!confirm(`Masih ada ${Q.length-d} soal yang belum terjawab lengkap. Tetap kirim?`))return;
+if(URL_APPS.startsWith('PASTE')){$('msg').textContent='URL Apps Script belum diisi oleh guru.';return}
+$('send').disabled=true;$('msg').textContent='Mengirim jawaban...';
+try{const r=await post({a:'submit',ans:S.ans}),j=await r.json();if(!j.ok)throw new Error(j.msg||'Gagal');S.sent=true;save();done()}
+catch(e){$('msg').textContent='Jawaban belum terkirim: '+e.message+'. Periksa sinyal lalu tekan kirim lagi.';$('send').disabled=false}};
+if(S.nama)show();
+</script>
+</body>
+</html>
